@@ -1,0 +1,146 @@
+:root {
+    --color-bg: #1f1f38;
+    --color-primary: #4db5ff;
+    --color-white: #fff;
+    --color-bone: #E5E5E5;
+
+    --transition: all 400ms ease;
+}
+
+
+
+/* === Body === */
+body {
+    font-family: "Raleway";
+    font-size: 1.5em;
+    text-align: center;
+    background: var(--color-bg);
+}
+
+label {
+    margin: 25px 5px;
+}
+
+#remove_items {
+    background-color: var(--color-bone);
+    color: #302B29;
+    padding: 30px;
+}
+
+
+
+/* === Buttons === */
+#add_btn {
+    background-color: transparent;
+    color: var(--color-primary);
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid var(--color-primary);
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#new_btn {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid var(--color-primary);
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#remove_btn {
+    background-color: transparent;
+    color: var(--color-primary);
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid var(--color-primary);
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#reset_btn {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid var(--color-primary);
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+
+
+/* === Button hovers === */
+#add_btn:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent;
+}
+
+#new_btn:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent;
+}
+
+#remove_btn:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent;
+}
+
+#reset_btn:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+    border-color: transparent;
+}
+
+
+
+/* === Selector & input window ===*/
+select {
+    font-family: "Raleway";
+    font-size: 0.85em;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    margin: 50px 10px;
+    padding: 5px;
+    border: 2px solid darkgrey;
+}
+
+input[type=text] {
+    padding: 10px 18px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+
+/* === Clock === */
+.clock{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-primary);
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    font-size: 70px;
+}
+
+
+
+/* === Flash colors === */
+.alert-info {
+    color: var(--color-bone);
+    background-color: var(--color-primary);
+}

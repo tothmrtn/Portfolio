@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Management Webapp</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </head>
+    <body>
+        <!-- Clock -->
+        <div class="clock">
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+            <span id="session">AM</span>
+        </div>
+        <!-- Clock-->
+
+        <!-- Remove tasks -->
+        <div id="remove_items">
+            <form action="/remove_items" method="POST">
+                {% for item in all_task %}
+                <input type="checkbox" name ="check" id="{{ item.replace(' ', '') }}" value="{{ item }}" onchange="check_me( '{{ item.replace(' ', '') }}' )">
+                <label for="{{ item }}" name="{{ item.replace(' ', '') }}">{{ item }}</label><br>
+                {% endfor %}
+                <input type="submit" value="CHECK TASK" id="remove_btn">
+            </form>
+        </div>
+        <!-- Remove tasks -->
+
+        <!-- Reset -->
+        <div id="reset">
+            <form action="/reset" method="POST">
+                    <button class="reset" id="reset_btn" type="submit">Reset</button>
+            </form>
+        </div>
+        <!-- Reset -->
+
+        <!-- Add tasks -->
+        <div id="add_item">
+            <form action="/add_items" method="POST">
+                <select name="select_items">
+                    {% for item in all_items %}
+                    <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                    <input type="submit" value="ADD TASK" id="add_btn">
+            </form>
+        <!-- Add tasks -->
+
+        <!-- Add new task -->
+        <div id="add_new">
+            <form action="/add_new" method="POST">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new" placeholder="Add new task" type="text">
+            </div>
+
+            <button class="new_btn" id="new_btn" type="submit">Add</button>
+        </form>
+        <!-- Add new task -->
+
+        <!-- Flash -->
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="alert-{{category}}">{{ message }}</div>
+        {% endfor %}
+        <!-- Flash -->
+
+        </div>
+    </body>
+</html>
